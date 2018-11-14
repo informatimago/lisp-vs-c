@@ -1,0 +1,79 @@
+
+Little Comparison Between Common Lisp and C
+===========================================
+
+Here is a little program: compute factorial of 42,
+implemented in C and in Common Lisp.
+
+We note that:
+
+1- the C program runs faster.
+
+2- the C program gives wrong results (who expected differently?).
+
+3- the C program, while being strictly equivalent, counts more
+   parentheses, if you count also the braces, the brackets, the
+   angle-brackets (of #include), and the semi-colon that surround
+   statements…
+
+Said otherwise:
+
+1- You cannot fee the difference of run-time between the Lisp program and the C program.
+
+2- the Lisp program gives the correct result.
+
+3- the lisp program is more concise and counts fewer parenthese.
+
+
+
+
+==== fact.c =======
+
+42! = 0
+        0.00 real         0.00 user         0.00 sys
+
+==== fact.lisp ====
+
+42! = 1405006117752879898543142606244511569936384000000000
+        0.00 real         0.00 user         0.00 sys
+
+===================
+
+fact.lisp             24 parentheses, braces, brackets, angle-brackets ,semi-colons, commas
+fact.c                34 parentheses, braces, brackets, angle-brackets ,semi-colons, commas
+
+
+==== fact.lisp ====
+
+(defun fact (x)
+  (if (zerop x)
+      1
+      (* x (fact (1- x)))))
+
+(defun main ()
+  (format t "~%~D! = ~D~%" 42 (fact 42))
+  (quit 0))
+
+==== fact.c ====
+
+#include <stdio.h>
+
+int fact(int x)
+{
+    if(0==x)
+    {
+        return(1);
+    }
+    else
+    {
+        return(x*fact(x-1));
+    }
+}
+
+int main()
+{
+   printf("\n%d! = %d\n",42,fact(42));
+   return(0);
+}
+
+===================
