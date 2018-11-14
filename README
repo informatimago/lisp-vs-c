@@ -25,7 +25,8 @@ Said otherwise:
 3- the lisp program is more concise and counts fewer parentheses.
 
 
-
+Note: to compare a more complex and real program implemented in Lisp and in C, 
+have a look at https://github.com/informatimago/scquery (sources/ and sources-cl/).
 
 ==== fact.c =======
 
