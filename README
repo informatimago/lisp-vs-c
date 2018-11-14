@@ -18,13 +18,11 @@ We note that:
 
 Said otherwise:
 
-1- You cannot fee the difference of run-time between the Lisp program and the C program.
+1- You cannot feel the difference of run-time between the Lisp program and the C program.
 
 2- the Lisp program gives the correct result.
 
-3- the lisp program is more concise and counts fewer parenthese.
-
-
+3- the lisp program is more concise and counts fewer parentheses.
 
 
 ==== fact.c =======
@@ -39,8 +37,8 @@ Said otherwise:
 
 ===================
 
-fact.lisp             24 parentheses, braces, brackets, angle-brackets ,semi-colons, commas
-fact.c                34 parentheses, braces, brackets, angle-brackets ,semi-colons, commas
+fact.lisp             24 parentheses, braces, brackets, angle-brackets, semi-colons, commas
+fact.c                34 parentheses, braces, brackets, angle-brackets, semi-colons, commas
 
 
 ==== fact.lisp ====
@@ -77,3 +75,12 @@ int main()
 }
 
 ===================
+
+
+Note: to compare a more complex and real program implemented in Lisp and in C, 
+have a look at https://github.com/informatimago/scquery (sources/ and sources-cl/).
+
+scquery in Lisp     1279 parentheses, braces, brackets, angle-brackets, semi-colons, commas
+scquery in C        8052 parentheses, braces, brackets, angle-brackets, semi-colons, commas
+
+
