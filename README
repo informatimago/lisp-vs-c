@@ -80,7 +80,7 @@ int main()
 Note: to compare a more complex and real program implemented in Lisp and in C, 
 have a look at https://github.com/informatimago/scquery (sources/ and sources-cl/).
 
-scquery in C        7806 parentheses, braces, brackets, angle-brackets, semi-colons, commas
 scquery in Lisp     1279 parentheses, braces, brackets, angle-brackets, semi-colons, commas
+scquery in C        8052 parentheses, braces, brackets, angle-brackets, semi-colons, commas
 
 
