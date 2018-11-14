@@ -35,10 +35,17 @@ run:fact-c fact-lisp
 	@printf '\n'
 	@printf '===================\n'
 
+define count_parens
+	printf '%-20s%4d parentheses, braces, brackets, angle-brackets, semi-colons, commas\n' \
+		"$(1)" \
+		$$(cat $(2) | sed -e 's/[^][<>(){};,]//g'|tr -d '\012'|wc -c)
+endef
+
+
 parens:
 	@printf '\n'
-	@for f in fact.{lisp,c} ; do printf '%-20s%4d parentheses, braces, brackets, angle-brackets ,semi-colons, commas\n' "$$f" $$(sed -e 's/[^][<>(){};,]//g'<$$f|tr -d '\012'|wc -c) ; done
-	@printf '\n'
+	@$(call count_parens,fact.lisp,fact.lisp)
+	@$(call count_parens,fact.c,fact.c)
 	@for f in fact.{lisp,c} ; do printf '\n==== %s ====\n\n'  "$$f" ; cat "$$f" ; done
 	@printf '\n'
 	@printf '===================\n'
