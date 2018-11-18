@@ -1,0 +1,8 @@
+#!/bin/sh                                                                       
+
+n=42
+nf=1
+for n in $(seq 1 $n); do
+    nf=$(echo "$nf $n * p" | dc)
+done
+echo $nf
